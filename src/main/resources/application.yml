@@ -1,0 +1,21 @@
+oidc:
+  issuer-uri: https://dev-792041.okta.com/oauth2/default
+  client-id: 0oajmskcbsjcBMMWK356
+  client-secret: exo4vBNmXZGYm7a8pWzoBpHFA5DLbsndvtOEQCp9
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          okta:
+            issuer-uri: ${oidc.issuer-uri}
+        registration:
+          login:
+            okta:
+              client-id: ${oidc.client-id}
+              client-secret: ${oidc.client-secret}
+              scope: openid email profile
+      resourceserver:
+        jwt:
+          issuer-uri: ${oidc.issuer-uri}
