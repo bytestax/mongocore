@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 @Document 
 public class Profile {
 
+	public Profile(){
+
+	}
 	public Profile(String id, String email) {
 		this.id = id;
 		this.email = email;
